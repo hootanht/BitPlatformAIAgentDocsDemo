@@ -27,6 +27,24 @@
             "file": "../docs/Buttons/ButtonGroup.md"
         },
         {
+            "file": "../docs/Layouts/BitFooter.md"
+        },
+        {
+            "file": "../docs/Layouts/BitGrid.md"
+        },
+        {
+            "file": "../docs/Layouts/BitHeader.md"
+        },
+        {
+            "file": "../docs/Layouts/BitSpacer.md"
+        },
+        {
+            "file": "../docs/Layouts/Layout.md"
+        },
+        {
+            "file": "../docs/Layouts/Stack.md"
+        },
+        {
             "file": "../docs/Lists/BitBasicList.md"
         },
         {

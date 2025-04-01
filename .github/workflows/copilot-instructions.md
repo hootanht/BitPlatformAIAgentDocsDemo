@@ -22,3 +22,18 @@
 - [BitPivot](../../docs/Navs/BitPivot.md)
 - [Breadcrumb](../../docs/Navs/Breadcrumb.md)
 - [DropMenu](../../docs/Navs/DropMenu.md)
+
+## Surfaces
+
+- [BitCard](../../docs/Surfaces/BitCard.md)
+- [BitModal](../../docs/Surfaces/BitModal.md)
+- [Tooltip](../../docs/Surfaces/Tooltip.md)
+
+## Layouts
+
+- [BitFooter](../../docs/Layouts/BitFooter.md)
+- [BitGrid](../../docs/Layouts/BitGrid.md)
+- [BitHeader](../../docs/Layouts/BitHeader.md)
+- [BitSpacer](../../docs/Layouts/BitSpacer.md)
+- [Layout](../../docs/Layouts/Layout.md)
+- [Stack](../../docs/Layouts/Stack.md)
