@@ -1,0 +1,39 @@
+@import "../../Styles/abstracts/_media-queries.scss";
+@import "../../Styles/abstracts/_bit-css-variables.scss";
+
+.payment-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.payment-card {
+  width: 100%;
+  padding: 2rem;
+}
+
+.payment-form {
+  width: 100%;
+}
+
+.order-summary {
+  padding: 1rem;
+  background-color: rgba($bit-color-primary, 0.05);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.success-container {
+  padding: 2rem;
+
+  :global(.bit-icon) {
+    font-size: 48px;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 599px) {
+  .payment-card {
+    padding: 1.5rem;
+  }
+}

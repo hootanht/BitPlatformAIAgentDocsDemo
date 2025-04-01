@@ -1,0 +1,23 @@
+@inherits AppComponentBase;
+
+<section>
+    <BitNavBar TItem="BitNavBarOption" Style="width:100%">
+        <BitNavBarOption Text="@Localizer[nameof(AppStrings.Home)]" IconName="@BitIconName.Home" Url="@Urls.HomePage" />
+        <AuthorizeView>
+            <Authorized>
+                <BitNavBarOption Text="@Localizer[nameof(AppStrings.Terms)]" IconName="@BitIconName.EntityExtraction"
+                    Url="@Urls.TermsPage" />
+                <BitNavBarOption Text="Pricing" IconName="@BitIconName.Money" Url="@Urls.PricingPage" />
+                <BitNavBarOption Text="@Localizer[nameof(AppStrings.About)]" IconName="@BitIconName.Info"
+                    Url="@Urls.AboutPage" />
+            </Authorized>
+            <NotAuthorized>
+                <BitNavBarOption Text="@Localizer[nameof(AppStrings.Terms)]" IconName="@BitIconName.EntityExtraction"
+                    Url="@Urls.TermsPage" />
+                <BitNavBarOption Text="Pricing" IconName="@BitIconName.Money" Url="@Urls.PricingPage" />
+                <BitNavBarOption Text="@Localizer[nameof(AppStrings.About)]" IconName="@BitIconName.Info"
+                    Url="@Urls.AboutPage" />
+            </NotAuthorized>
+        </AuthorizeView>
+    </BitNavBar>
+</section>

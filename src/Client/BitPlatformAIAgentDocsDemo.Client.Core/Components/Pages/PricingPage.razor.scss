@@ -1,0 +1,130 @@
+@import "../../Styles/abstracts/_media-queries.scss";
+@import "../../Styles/abstracts/_bit-css-variables.scss";
+
+.pricing-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.pricing-title {
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    $bit-color-primary 0%,
+    $bit-color-info 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-subtitle {
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.pricing-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.pricing-card-highlighted {
+  border: 2px solid $bit-color-primary;
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+.pricing-popular-tag {
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  background: $bit-color-primary;
+  color: $bit-color-primary-text;
+  padding: 5px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  transform: rotate(45deg);
+}
+
+.pricing-card-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.pricing-tag {
+  margin: 1rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.pricing-period {
+  margin-left: 4px;
+  color: $bit-color-neutrals-gray70;
+}
+
+.pricing-features {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pricing-faq {
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 959px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .pricing-card-highlighted {
+    transform: scale(1);
+    &:hover {
+      transform: translateY(-10px) scale(1);
+    }
+  }
+}

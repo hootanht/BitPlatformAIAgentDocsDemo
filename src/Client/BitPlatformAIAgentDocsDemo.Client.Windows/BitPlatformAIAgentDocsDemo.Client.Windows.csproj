@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWindowsForms>true</UseWindowsForms>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+        <RootNamespace>BitPlatformAIAgentDocsDemo.Client.Windows</RootNamespace>
+        <StartupObject>BitPlatformAIAgentDocsDemo.Client.Windows.Program</StartupObject>
+        <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+        <ResolveStaticWebAssetsInputsDependsOn>
+            BeforeBuildTasks;
+            $(ResolveStaticWebAssetsInputsDependsOn)
+        </ResolveStaticWebAssetsInputsDependsOn>
+        <NoWarn>$(NoWarn);WFO5001</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Environment)' != 'Development'">
+        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode>partial</TrimMode>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+        <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
+        <CompressionEnabled>false</CompressionEnabled>
+        <!-- Enabling compression generates `.br` and `.gz` files for static assets.
+        While this is beneficial for Blazor WebAssembly, it only adds to the app bundle size in MAUI without offering any advantages. -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="BitPlatformAIAgentDocsDemo.Client.Core.Components.Layout" />
+        <Using Include="BitPlatformAIAgentDocsDemo.Client.Core.Components.Pages" />
+        <Using Include="BitPlatformAIAgentDocsDemo.Client.Core.Services.Contracts" />
+        <Using Include="BitPlatformAIAgentDocsDemo.Client.Core.Services" />
+        <Using Include="BitPlatformAIAgentDocsDemo.Shared" />
+
+        <PackageReference Include="EmbedIO" />
+
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+        <PackageReference Include="Microsoft.Extensions.Logging.EventLog" />
+        <PackageReference Include="Microsoft.Extensions.Logging.EventSource" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" />
+        <PackageReference Include="Microsoft.Web.WebView2" />
+        <PackageReference Include="Velopack" />
+                <Content Include="..\BitPlatformAIAgentDocsDemo.Client.Maui\wwwroot\index.html" Link="wwwroot\index.html">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="..\BitPlatformAIAgentDocsDemo.Client.Maui\wwwroot\external-js-runner.html" Link="wwwroot\external-js-runner.html">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Remove="compilerconfig.json" />
+        <None Include="compilerconfig.json" />
+        <Content Include=".config\dotnet-tools.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BitPlatformAIAgentDocsDemo.Client.Core\BitPlatformAIAgentDocsDemo.Client.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Resources\**\*.*" />
+        <Content Remove="appsettings*.json" />
+        <EmbeddedResource Include="appsettings*.json" />
+    </ItemGroup>
+
+    <Target Name="BeforeBuildTasks" AfterTargets="CoreCompile">
+        <CallTarget Targets="BuildCssFiles" />
+    </Target>
+
+    <Target Name="BuildCssFiles">
+        <Exec Command="../BitPlatformAIAgentDocsDemo.Client.Core/node_modules/.bin/sass .:. --style compressed --load-path=. --silence-deprecation=import" StandardOutputImportance="high" StandardErrorImportance="high" LogStandardErrorAsError="true" />
+    </Target>
+
+    <Target Name="RemoveFilesAfterPublish" AfterTargets="Publish">
+        <!-- Unneccecary files because of Microsoft.Web.WebView2.Wpf etc. -->
+        <ItemGroup>
+            <FilesToDelete Include="$(PublishDir)wpfgfx_cor3.dll" />
+            <FilesToDelete Include="$(PublishDir)WindowsBase.dll" />
+            <FilesToDelete Include="$(PublishDir)PresentationCore.dll" />
+            <FilesToDelete Include="$(PublishDir)D3DCompiler_47_cor3.dll" />
+            <FilesToDelete Include="$(PublishDir)PresentationFramework.dll" />
+            <FilesToDelete Include="$(PublishDir)System.Windows.Forms.Design.dll" />
+        </ItemGroup>
+        <Delete Files="@(FilesToDelete)" />
+    </Target>
+
+</Project>

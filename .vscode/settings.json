@@ -1,0 +1,69 @@
+{
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "dotnet.defaultSolution": "BitPlatformAIAgentDocsDemo.Web.slnf",
+    "dotnet.unitTests.runSettingsPath": "src/Tests/.runsettings",
+    "csharp.preview.improvedLaunchExperience": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.resx": "$(capture).*.resx",
+        "*.razor": "$(capture).*.razor, $(capture).razor.cs, $(capture).razor.scss",
+        "*.scss": "$(capture).*.scss, $(capture).css, $(capture).css.map",
+        "*.json": "$(capture).*.json, $(capture).*.json"
+    },
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": "../docs/Buttons/ActionButton.md"
+        },
+        {
+            "file": "../docs/Buttons/BitMenuButton.md"
+        },
+        {
+            "file": "../docs/Buttons/BitToggleButton.md"
+        },
+        {
+            "file": "../docs/Buttons/Button.md"
+        },
+        {
+            "file": "../docs/Buttons/ButtonGroup.md"
+        },
+        {
+            "file": "../docs/Lists/BitBasicList.md"
+        },
+        {
+            "file": "../docs/Lists/BitCarousel.md"
+        },
+        {
+            "file": "../docs/Lists/BitSwiper.md"
+        },
+        {
+            "file": "../docs/Lists/BitTimeline.md"
+        },
+        {
+            "file": "../docs/Navs/BitNav.md"
+        },
+        {
+            "file": "../docs/Navs/BitNavBar.md"
+        },
+        {
+            "file": "../docs/Navs/BitPagination.md"
+        },
+        {
+            "file": "../docs/Navs/BitPivot.md"
+        },
+        {
+            "file": "../docs/Navs/Breadcrumb.md"
+        },
+        {
+            "file": "../docs/Navs/DropMenu.md"
+        },
+        {
+            "file": "../docs/Surfaces/BitCard.md"
+        },
+        {
+            "file": "../docs/Surfaces/BitModal.md"
+        },
+        {
+            "file": "../docs/Surfaces/Tooltip.md"
+        }
+    ]
+}

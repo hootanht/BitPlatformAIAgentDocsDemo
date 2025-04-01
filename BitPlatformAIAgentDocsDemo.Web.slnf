@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "BitPlatformAIAgentDocsDemo.sln",
+    "projects": [
+      "src\\Client\\BitPlatformAIAgentDocsDemo.Client.Core\\BitPlatformAIAgentDocsDemo.Client.Core.csproj",
+      "src\\Client\\BitPlatformAIAgentDocsDemo.Client.Web\\BitPlatformAIAgentDocsDemo.Client.Web.csproj",
+      "src\\Server\\BitPlatformAIAgentDocsDemo.Server.Api\\BitPlatformAIAgentDocsDemo.Server.Api.csproj",
+      "src\\Server\\BitPlatformAIAgentDocsDemo.Server.Web\\BitPlatformAIAgentDocsDemo.Server.Web.csproj",
+      "src\\Shared\\BitPlatformAIAgentDocsDemo.Shared.csproj",
+      "src\\Tests\\BitPlatformAIAgentDocsDemo.Tests.csproj"
+    ]
+  }
+}

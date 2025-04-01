@@ -1,0 +1,70 @@
+@attribute [Route("/payment")]
+@attribute [Route("{culture?}/payment")]
+@inherits AppPageBase
+
+<PageTitle>Checkout</PageTitle>
+
+<section>
+    <BitStack HorizontalAlign="BitAlignment.Center" Class="payment-container">
+        <BitCard Class="payment-card">
+            <BitStack>
+                <BitText Typography="BitTypography.H4" Align="BitTextAlign.Center">Complete Your Purchase</BitText>
+
+                @if (isSuccess)
+                {
+                    <BitStack Gap="1.5rem" HorizontalAlign="BitAlignment.Center" Class="success-container">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" Size="BitSize.Large" />
+                        <BitText Typography="BitTypography.H5" Align="BitTextAlign.Center">Payment Successful!</BitText>
+                        <BitText Align="BitTextAlign.Center">Thank you for your purchase. Your subscription to the @planName
+                            plan is now active.</BitText>
+                        <BitButton OnClick="ReturnToHome">Return to Home</BitButton>
+                    </BitStack>
+                }
+                else
+                {
+                    <BitStack Gap="1.5rem" Class="payment-form">
+                        <BitText Typography="BitTypography.H5">Order Summary</BitText>
+
+                        <BitStack Horizontal VerticalAlign="BitAlignment.Center" Class="order-summary">
+                            <BitStack>
+                                <BitText Typography="BitTypography.Body1"><b>@planName Plan</b></BitText>
+                                <BitText Typography="BitTypography.Body2">Monthly subscription</BitText>
+                            </BitStack>
+                            <BitSpacer />
+                            <BitText Typography="BitTypography.H6">@GetPlanPrice()</BitText>
+                        </BitStack>
+
+                        <BitSeparator />
+
+                        <BitText Typography="BitTypography.H6">Payment Information</BitText>
+
+                        <EditForm Model="paymentInfo" OnValidSubmit="ProcessPayment">
+                            <AppDataAnnotationsValidator />
+
+                            <BitStack Gap="1.5rem">
+                                <BitTextField @bind-Value="paymentInfo.CardholderName" Label="Cardholder Name"
+                                    Placeholder="John Doe" Required />
+
+                                <BitTextField @bind-Value="paymentInfo.CardNumber" Label="Card Number"
+                                    Placeholder="1234 5678 9012 3456" Required />
+
+                                <BitStack Horizontal>
+                                    <BitTextField @bind-Value="paymentInfo.ExpiryDate" Label="Expiry Date"
+                                        Placeholder="MM/YY" Required />
+
+                                    <BitTextField @bind-Value="paymentInfo.CVV" Label="CVV" Placeholder="123" Required />
+                                </BitStack>
+
+                                <BitButton ButtonType="BitButtonType.Submit" FullWidth Color="BitColor.Primary"
+                                    IsLoading="isProcessing">
+                                    Pay @GetPlanPrice()
+                                </BitButton>
+                            </BitStack>
+                        </EditForm>
+                    </BitStack>
+                }
+            </BitStack>
+        </BitCard>
+    </BitStack>
+</section>
+                           

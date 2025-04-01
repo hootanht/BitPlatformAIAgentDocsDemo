@@ -1,0 +1,161 @@
+﻿@attribute [Route(Urls.PricingPage)]
+@attribute [Route("{culture?}" + Urls.PricingPage)]
+@attribute [AppResponseCache(SharedMaxAge = 3600 * 24 * 7, MaxAge = 60 * 5)]
+@inherits AppPageBase
+
+<PageTitle>@Localizer[nameof(AppStrings.PricingPageTitle)]</PageTitle>
+
+<section>
+    <BitStack HorizontalAlign="BitAlignment.Center" Class="pricing-container">
+        <BitText Typography="BitTypography.H3" Align="BitTextAlign.Center" Class="pricing-title">
+            Choose the Perfect Plan for Your Needs
+        </BitText>
+        <BitText Typography="BitTypography.Body1" Align="BitTextAlign.Center" Class="pricing-subtitle">
+            Flexible options designed to fit your requirements, from small teams to enterprise solutions
+        </BitText>
+
+        <div class="pricing-cards">
+            <!-- Basic Plan -->
+            <BitCard Class="pricing-card">
+                <div class="pricing-card-header">
+                    <BitText Typography="BitTypography.H5">Basic</BitText>
+                    <div class="pricing-tag">
+                        <BitText Typography="BitTypography.H3">$9</BitText>
+                        <BitText Typography="BitTypography.Body2" Class="pricing-period">/month</BitText>
+                    </div>
+                    <BitText Typography="BitTypography.Body2">Perfect for small teams and startups</BitText>
+                </div>
+                <BitSeparator />
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>All basic features</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Up to 5 team members</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>10GB storage</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Email support</BitText>
+                    </div>
+                </div>
+                <BitSeparator />
+                <BitButton FullWidth OnClick="() => NavigateToPayment(1)" IconName="@BitIconName.Forward">
+                    Get Started
+                </BitButton>
+            </BitCard>
+
+            <!-- Pro Plan (Highlighted) -->
+            <BitCard Class="pricing-card pricing-card-highlighted">
+                <div class="pricing-popular-tag">MOST POPULAR</div>
+                <div class="pricing-card-header">
+                    <BitText Typography="BitTypography.H5">Pro</BitText>
+                    <div class="pricing-tag">
+                        <BitText Typography="BitTypography.H3">$29</BitText>
+                        <BitText Typography="BitTypography.Body2" Class="pricing-period">/month</BitText>
+                    </div>
+                    <BitText Typography="BitTypography.Body2">Ideal for growing businesses</BitText>
+                </div>
+                <BitSeparator />
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>All Basic features</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Up to 20 team members</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>50GB storage</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Priority email & chat support</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Advanced analytics</BitText>
+                    </div>
+                </div>
+                <BitSeparator />
+                <BitButton FullWidth Color="BitColor.Primary" OnClick="() => NavigateToPayment(2)" IconName="@BitIconName.Forward">
+                    Get Started
+                </BitButton>
+            </BitCard>
+
+            <!-- Enterprise Plan -->
+            <BitCard Class="pricing-card">
+                <div class="pricing-card-header">
+                    <BitText Typography="BitTypography.H5">Enterprise</BitText>
+                    <div class="pricing-tag">
+                        <BitText Typography="BitTypography.H3">$99</BitText>
+                        <BitText Typography="BitTypography.Body2" Class="pricing-period">/month</BitText>
+                    </div>
+                    <BitText Typography="BitTypography.Body2">For large-scale organizations</BitText>
+                </div>
+                <BitSeparator />
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>All Pro features</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Unlimited team members</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>500GB storage</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>24/7 phone & priority support</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Advanced security features</BitText>
+                    </div>
+                    <div class="pricing-feature">
+                        <BitIcon IconName="@BitIconName.CheckMark" Color="BitColor.Success" />
+                        <BitText>Custom integrations</BitText>
+                    </div>
+                </div>
+                <BitSeparator />
+                <BitButton FullWidth OnClick="() => NavigateToPayment(3)" IconName="@BitIconName.Forward">
+                    Contact Sales
+                </BitButton>
+            </BitCard>
+        </div>
+
+        <BitCard FullWidth Class="pricing-faq">
+            <BitText Typography="BitTypography.H4" Align="BitTextAlign.Center">Frequently Asked Questions</BitText>
+            <BitStack>
+                <BitCard Style="padding: 1rem; margin: 0.5rem 0">
+                    <BitText Typography="BitTypography.H6">How does the billing work?</BitText>
+                    <BitText Typography="BitTypography.Body2">All plans are billed monthly or annually with no
+                        commitment. You can upgrade, downgrade, or cancel at any time.</BitText>
+                </BitCard>
+                <BitCard Style="padding: 1rem; margin: 0.5rem 0">
+                    <BitText Typography="BitTypography.H6">Can I change plans later?</BitText>
+                    <BitText Typography="BitTypography.Body2">Yes, you can upgrade or downgrade your plan at any time.
+                        Your billing will be adjusted accordingly.</BitText>
+                </BitCard>
+                <BitCard Style="padding: 1rem; margin: 0.5rem 0">
+                    <BitText Typography="BitTypography.H6">Is there a free trial?</BitText>
+                    <BitText Typography="BitTypography.Body2">Yes, all plans come with a 14-day free trial, no credit
+                        card required.</BitText>
+                </BitCard>
+            </BitStack>
+        </BitCard>
+    </BitStack>
+</section>   
+                       
+                       
+                       
