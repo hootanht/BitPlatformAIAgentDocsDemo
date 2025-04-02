@@ -46,6 +46,12 @@ public partial class PaymentPage
     {
         NavigationManager.NavigateTo(Urls.HomePage);
     }
+    // Add this method to PaymentPage.razor.cs
+    private void CancelPayment()
+    {
+        // Navigate back to the pricing page
+        NavigationManager.NavigateTo(Urls.PricingPage);
+    }
 }
 
 public class PaymentInfo

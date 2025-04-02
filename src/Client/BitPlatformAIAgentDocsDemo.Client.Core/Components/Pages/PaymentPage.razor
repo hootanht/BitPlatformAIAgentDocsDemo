@@ -1,4 +1,4 @@
-@attribute [Route("/payment")]
+﻿@attribute [Route("/payment")]
 @attribute [Route("{culture?}/payment")]
 @inherits AppPageBase
 
@@ -55,10 +55,19 @@
                                     <BitTextField @bind-Value="paymentInfo.CVV" Label="CVV" Placeholder="123" Required />
                                 </BitStack>
 
-                                <BitButton ButtonType="BitButtonType.Submit" FullWidth Color="BitColor.Primary"
-                                    IsLoading="isProcessing">
-                                    Pay @GetPlanPrice()
-                                </BitButton>
+                                <BitStack Horizontal Gap="0.5rem">
+                                    <BitButton ButtonType="BitButtonType.Submit" FullWidth Color="BitColor.Primary"
+                                        IsLoading="isProcessing">
+                                        Pay @GetPlanPrice()
+                                    </BitButton>
+                                    
+                                    <BitButton ButtonType="BitButtonType.Button" 
+                                              Variant="BitVariant.Outline"
+                                              OnClick="CancelPayment"
+                                              IconName="@BitIconName.Cancel">
+                                        Cancel
+                                    </BitButton>
+                                </BitStack>
                             </BitStack>
                         </EditForm>
                     </BitStack>
