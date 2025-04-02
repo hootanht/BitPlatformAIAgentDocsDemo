@@ -1,0 +1,95 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Component Documentation
+
+### It's a collection of components that are designed to be used in a variety of applications, including web and mobile. The components are built using Bit Platform and Blazor, and they are designed to be easy to use and customize. It's very important to read the documentation in the link below to understand how to use the components effectively.
+
+## Core Systems
+
+- [Icon System](mdc:../docs/BitIcon.md) - Comprehensive guide to using icons in Bit BlazorUI
+- [Theme System](mdc:../docs/BitThemeSystem.md) - Guide to theming and styling in Bit BlazorUI
+
+## Buttons
+
+- [BitActionButton](mdc:../docs/Buttons/BitActionButton.md)
+- [BitMenuButton](mdc:../docs/Buttons/BitMenuButton.md)
+- [BitToggleButton](mdc:../docs/Buttons/BitToggleButton.md)
+- [BitButton](mdc:../docs/Buttons/BitButton.md)
+- [BitButtonGroup](mdc:../docs/Buttons/BitButtonGroup.md)
+
+## Inputs
+
+- [BitCalendar](mdc:../docs/Inputs/BitCalendar.md)
+- [BitCheckbox](mdc:../docs/Inputs/BitCheckbox.md)
+- [BitChoiceGroup](mdc:../docs/Inputs/BitChoiceGroup.md)
+- [BitFileUpload](mdc:../docs/Inputs/BitFileUpload.md)
+- [BitDropDown](mdc:../docs/Inputs/BitDropDown.md)
+- [BitFileUpload](mdc:../docs/Inputs/BitFileUpload.md)
+- [BitNumberField](mdc:../docs/Inputs/BitNumberField.md)
+- [BitOtpInput](mdc:../docs/Inputs/BitOtpInput.md)
+- [BitRating](mdc:../docs/Inputs/BitRating.md)
+- [BitSearchBox](mdc:../docs/Inputs/BitSearchBox.md)
+- [BitSlider](mdc:../docs/Inputs/BitSlider.md)
+- [BitTextField](mdc:../docs/Inputs/BitTextField.md)
+- [BitToggle](mdc:../docs/Inputs/BitToggle.md)
+- [BitCircularTimePicker](mdc:../docs/Inputs/Pickers/BitCircularTimePicker.md)
+- [BitColorPicker](mdc:../docs/Inputs/Pickers/BitColorPicker.md)
+- [BitDatePicker](mdc:../docs/Inputs/Pickers/BitDatePicker.md)
+- [BitDateRangePicker](mdc:../docs/Inputs/Pickers/BitDateRangePicker.md)
+- [BitTimePicker](mdc:../docs/Inputs/Pickers/BitTimePicker.md)
+
+## Lists
+
+- [BitBasicList](mdc:../docs/Lists/BitBasicList.md)
+- [BitCarousel](mdc:../docs/Lists/BitCarousel.md)
+- [BitSwiper](mdc:../docs/Lists/BitSwiper.md)
+- [BitTimeline](mdc:../docs/Lists/BitTimeline.md)
+
+## Navs
+
+- [BitNav](mdc:../docs/Navs/BitNav.md)
+- [BitNavBar](mdc:../docs/Navs/BitNavBar.md)
+- [BitPagination](mdc:../docs/Navs/BitPagination.md)
+- [BitPivot](mdc:../docs/Navs/BitPivot.md)
+- [Breadcrumb](mdc:../docs/Navs/Breadcrumb.md)
+- [DropMenu](mdc:../docs/Navs/DropMenu.md)
+
+## Surfaces
+
+- [BitCard](mdc:../docs/Surfaces/BitCard.md)
+- [BitModal](mdc:../docs/Surfaces/BitModal.md)
+- [Tooltip](mdc:../docs/Surfaces/BitTooltip.md)
+
+## Layouts
+
+- [BitFooter](mdc:../docs/Layouts/BitFooter.md)
+- [BitGrid](mdc:../docs/Layouts/BitGrid.md)
+- [BitHeader](mdc:../docs/Layouts/BitHeader.md)
+- [BitSpacer](mdc:../docs/Layouts/BitSpacer.md)
+- [BitLayout](mdc:../docs/Layouts/BitLayout.md)
+- [BitStack](mdc:../docs/Layouts/BitStack.md)
+
+## Notifications
+
+- [BitBadge](mdc:../docs/Notifications/BitBadge.md)
+- [BitMessage](mdc:../docs/Notifications/BitMessage.md)
+- [BitPersona](mdc:../docs/Notifications/BitPersona.md)
+- [BitSnackBar](mdc:../docs/Notifications/BitSnackBar.md)
+- [BitTag](mdc:../docs/Notifications/BitTag.md)
+
+## Progress
+
+- [BitLoading](mdc:../docs/Progress/BitLoading.md)
+- [BitProgress](mdc:../docs/Progress/BitProgress.md)
+- [BitShimmer](mdc:../docs/Progress/BitShimmer.md)
+
+## Utilities
+
+- [BitElement](mdc:../docs/Utilities/BitElement.md)
+- [BitIcon](mdc:../docs/Utilities/BitIcon.md)
+- [BitImage](mdc:../docs/Utilities/BitImage.md)
+
